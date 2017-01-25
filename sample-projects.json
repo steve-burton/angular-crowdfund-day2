@@ -1,0 +1,23 @@
+{ "projects": [{
+  "name": "Emergency Call",
+  "groupNames": "Ryan Back",
+  "description": "This will track a caller when an emergency is called in",
+  "neededFunds": 10000,
+  "collectedFunds": 0,
+  "rewards": "Two free years of using the system for emergency services"
+  }, {
+  "name": "Applicant Tracking System",
+  "groupNames": "Ryan Back",
+  "description": "Track candidates for recruiting",
+  "neededFunds": 1000,
+  "collectedFunds": 0,
+  "rewards": "Free consulting"
+  }, {
+  "name": "Some service",
+  "groupNames": "Ryan Back",
+  "description": "This will do something important",
+  "neededFunds": 100000,
+  "collectedFunds": 0,
+  "rewards": "Awesome stuff"
+  }]
+}
