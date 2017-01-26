@@ -13,9 +13,9 @@
 <br>
 <h3>Donate</h3>
 <select #donatevalue>
-  <option [value]=5>$5</option>
-  <option [value]=10>$10</option>
-  <option [value]=15>$15</option>
-  <option [value]=20>$20</option>
+  <option [value]='5'>$5</option>
+  <option [value]='10'>$10</option>
+  <option [value]='15'>$15</option>
+  <option [value]='20'>$20</option>
 </select>
-<button class="btn btn-success" (click)='donate(displayedProject, donatevalue.value)'>Donate!</button>
+<button class="btn btn-success" (click)='donate(donatevalue.value)'>Donate!</button>

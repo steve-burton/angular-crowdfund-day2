@@ -47,14 +47,15 @@ export class ProjectService {
   donate(project, value) {
     var newvalue = parseInt(value)
     console.log(newvalue);
-    console.log(project);
-    console.log(project.remainingFunds);
-    console.log(project.collectedFunds);
-    project.remainingFunds -= newvalue;
-    project.collectedFunds += newvalue;
-    debugger;
+    var newProject;
+    project.subscribe(i => newProject = i)
+    var updatedProject = this.getProjectByKey(newProject.$key);
+
+    var remFunds = newProject.remainingFunds -= newvalue;
+    var collectedFunds = newProject.collectedFunds += newvalue;
+    // debugger;
 
 
-    // updatedProject.update({collectedFunds: this.collectedFunds, remainingFunds: this.remainingFunds});
+    updatedProject.update({collectedFunds: collectedFunds, remainingFunds: remFunds});
   }
 }
