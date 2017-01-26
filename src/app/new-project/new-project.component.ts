@@ -16,7 +16,7 @@ export class NewProjectComponent {
 
   submit(name: string, groupNames: string, description: string, neededFunds: number, rewards: string) {
     var newProject: Project = new Project(name, groupNames, description, neededFunds, rewards)
+    newProject = this.projectService.remainingFunds(newProject);
     this.projectService.submit(newProject);
   }
-
 }

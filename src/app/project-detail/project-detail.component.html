@@ -1,7 +1,12 @@
-<p>
-  works!
-  <!-- <p>Group Members: {{project.groupNames}}</p>
-  <p>Goal: ${{project.neededFunds}}</p>
-  <p>Need: ${{project.collectedFunds}}</p>
-  <p>Rewards: {{project.rewards}}</p> -->
-</p>
+<div class="panel-default">
+  <div class="panel-heading">
+    <h4 class="text-center">{{(displayedProject | async)?.name}}</h4>
+  </div>
+    <div class="panel-body">
+      <p>Group Members: {{(displayedProject | async)?.groupNames}}</p>
+      <p>Goal: ${{(displayedProject | async)?.neededFunds}}</p>
+      <p>Funds Recieved: ${{(displayedProject | async)?.remainingFunds}}</p>
+      <p>Need: ${{(displayedProject | async)?.collectedFunds}}</p>
+      <p>Rewards: {{(displayedProject | async)?.rewards}}</p>
+  </div>
+</div>

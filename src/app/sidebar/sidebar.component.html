@@ -1,0 +1,10 @@
+<h5 class="text-center">Almost funded</h5>
+
+<div *ngIf='!(projects | async)'><p>Loading...</p></div>
+<div *ngIf='projects | async'>
+  <div *ngFor='let project of projects | almostFunded'>
+    <ul>
+      <li>{{project.name}}</li>
+    </ul>
+  </div>
+</div>

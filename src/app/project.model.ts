@@ -1,5 +1,6 @@
 export class Project {
   public collectedFunds: number = 0;
+  public remainingFunds: number = 0;
   constructor(public name: string,
     public groupNames: string,
     public description: string,

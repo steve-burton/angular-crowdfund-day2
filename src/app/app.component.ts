@@ -6,6 +6,4 @@ import { Project } from './project.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Flock Financing';
-}
+export class AppComponent {}

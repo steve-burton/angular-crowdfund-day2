@@ -1,0 +1,10 @@
+.project-page-sidebar {
+  background-color: #f7f7f7;
+  height: 900px;
+}
+
+.project-list-panel {
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+}

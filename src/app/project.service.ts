@@ -21,7 +21,16 @@ export class ProjectService {
     this.redirect();
   }
 
+  remainingFunds(project: Project) {
+    project.remainingFunds = project.neededFunds;
+    return project;
+  }
+
   redirect() {
     this.router.navigate(['./projects'])
+  }
+
+  getProjectByKey(projKey: string) {
+    return this.angularFire.database.object('projects/' + projKey)
   }
 }
