@@ -23,4 +23,8 @@ export class ProjectDetailComponent implements OnInit {
     });
     this.displayedProject = this.projectService.getProjectByKey(this.projectKey);
   }
+
+  donate(project, value) {
+    this.projectService.donate(project, value);
+  }
 }

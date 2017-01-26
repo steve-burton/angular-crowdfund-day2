@@ -1,0 +1,24 @@
+<h5>Edit</h5>
+
+<label>Project Name</label>
+<input type="text" [(ngModel)]='selectedProject.name'>
+<br>
+
+<label>Group Names</label>
+<input type="text" [(ngModel)]='selectedProject.groupNames'>
+<br>
+
+<label>Description</label>
+<input type="text" [(ngModel)]='selectedProject.description'>
+<br>
+
+<label>Goal</label>
+<input type="number" [(ngModel)]='selectedProject.neededFunds'>
+<br>
+
+<label>Rewards</label>
+<input type="text" [(ngModel)]='selectedProject.rewards'>
+<br>
+
+<button class="btn btn-default" (click)='updateProject(selectedProject)'>Save!</button>
+<button class="btn btn-danger" (click)='deleteProject(selectedProject)'>Delete!</button>

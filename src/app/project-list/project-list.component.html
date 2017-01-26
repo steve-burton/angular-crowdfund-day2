@@ -1,20 +1,33 @@
 <h3 class="text-center">Projects</h3>
 
-<div class="col-lg-2 col-md-4 hidden-xs hidden-sm project-page-sidebar">
-  <app-sidebar></app-sidebar>
-</div>
+<div class="row">
+  <div *ngIf="currentRoute !== '/new-project'">
+    <div class="col-lg-2 col-md-4 hidden-xs hidden-sm project-page-sidebar">
+      <!-- <app-sidebar></app-sidebar> -->
+    </div>
+  </div>
 
-<div class="col-lg-10 col-md-8 col-sm-12">
-  <div *ngFor='let project of projects | async'>
-    <li>
-      <div class="panel-default project-list-panel" (click)='projectNavigation(project)'>
-        <div class="panel-heading">
-          <h4 class="text-center">{{project.name}}</h4>
+  <div class="col-lg-10 col-md-8 col-sm-12">
+    <div *ngFor='let project of projects | async'>
+      <li>
+        <div class="panel-default project-list-panel">
+          <div class="panel-heading" (click)='projectNavigation(project)'>
+            <h4 class="text-center">{{project.name}}</h4>
+          </div>
+          <div class="panel-body">
+            <p>Description: {{project.description}}</p>
+            <div *ngIf="currentRoute === '/new-project'">
+              <p>Group Members: {{project.groupNames}}</p>
+              <p>Goal: {{project.neededFunds}}</p>
+              <p>Need: {{project.remainingFunds}}</p>
+              <p>Collected: {{project.collectedFunds}}</p>
+              <p>Rewards: {{project.rewards}}</p>
+              <hr>
+              <app-edit-project  [selectedProject]='project'></app-edit-project>
+            </div>
+          </div>
         </div>
-        <div class="panel-body">
-          <p>Description: {{project.description}}</p>
-        </div>
-      </div>
-    </li>
+      </li>
+    </div>
   </div>
 </div>

@@ -3,6 +3,7 @@ import { AngularFire, FirebaseListObservable} from 'angularfire2';
 import { ProjectService } from '../project.service';
 import { Project } from '../project.model';
 import { Router } from '@angular/router';
+import { EditProjectComponent } from '../edit-project/edit-project.component';
 
 @Component({
   selector: 'app-project-list',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class ProjectListComponent implements OnInit {
 
   projects: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
   constructor(private router: Router, private projectService: ProjectService) { }
 

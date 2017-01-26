@@ -11,7 +11,8 @@ import { AngularFireModule } from 'angularfire2';
 import { routing } from './app.routing';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { AlmostFundedPipe } from './almost-funded.pipe';
+// import { AlmostFundedPipe } from './almost-funded.pipe';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 
 export const firebaseConfig = {
@@ -29,7 +30,8 @@ export const firebaseConfig = {
     ProjectDetailComponent,
     NewProjectComponent,
     SidebarComponent,
-    AlmostFundedPipe
+    // AlmostFundedPipe,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

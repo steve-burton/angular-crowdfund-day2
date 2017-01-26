@@ -33,4 +33,28 @@ export class ProjectService {
   getProjectByKey(projKey: string) {
     return this.angularFire.database.object('projects/' + projKey)
   }
+
+  updateProject(project) {
+    var updatedProject = this.getProjectByKey(project.$key);
+    updatedProject.update({name: project.name, groupNames: project.groupNames, description: project.description, neededFunds: project.neededFunds, rewards: project.rewards})
+  }
+
+  deleteProject(localProjectToDelete) {
+    var projectInFirebase = this.getProjectByKey(localProjectToDelete.$key);
+    projectInFirebase.remove();
+  }
+
+  donate(project, value) {
+    var newvalue = parseInt(value)
+    console.log(newvalue);
+    console.log(project);
+    console.log(project.remainingFunds);
+    console.log(project.collectedFunds);
+    project.remainingFunds -= newvalue;
+    project.collectedFunds += newvalue;
+    debugger;
+
+
+    // updatedProject.update({collectedFunds: this.collectedFunds, remainingFunds: this.remainingFunds});
+  }
 }

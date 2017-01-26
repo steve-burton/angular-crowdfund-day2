@@ -5,8 +5,17 @@
     <div class="panel-body">
       <p>Group Members: {{(displayedProject | async)?.groupNames}}</p>
       <p>Goal: ${{(displayedProject | async)?.neededFunds}}</p>
-      <p>Funds Recieved: ${{(displayedProject | async)?.remainingFunds}}</p>
-      <p>Need: ${{(displayedProject | async)?.collectedFunds}}</p>
+      <p>Need: ${{(displayedProject | async)?.remainingFunds}}</p>
+      <p>Collected: ${{(displayedProject | async)?.collectedFunds}}</p>
       <p>Rewards: {{(displayedProject | async)?.rewards}}</p>
   </div>
 </div>
+<br>
+<h3>Donate</h3>
+<select #donatevalue>
+  <option [value]=5>$5</option>
+  <option [value]=10>$10</option>
+  <option [value]=15>$15</option>
+  <option [value]=20>$20</option>
+</select>
+<button class="btn btn-success" (click)='donate(displayedProject, donatevalue.value)'>Donate!</button>

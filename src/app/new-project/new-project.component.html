@@ -1,21 +1,24 @@
-<div class="form-group">
-  <label>Project Name</label>
-  <input type="text" class="form-control" #projectName>
+<div class="new-form">
+  <div class="form-group">
+    <label>Project Name</label>
+    <input type="text" class="form-control" #projectName>
+  </div>
+  <div class="form-group">
+    <label>Group Members</label>
+    <input type="text" class="form-control" #groupNames>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <textarea type="text" class="form-control" #description></textarea>
+  </div>
+  <div class="form-group">
+    <label>Funding Goal</label>
+    <input type="number" class="form-control" #neededFunds>
+  </div>
+  <div class="form-group">
+    <label>Rewards</label>
+    <input type="text" class="form-control" #rewards>
+  </div>
+  <button class='btn btn-default' (click)="submit(projectName.value, groupNames.value, description.value, neededFunds.value, rewards.value); projectName.value=''; groupNames.value=''; description.value=''; neededFunds.value=''; rewards.value=''">Fund Me!</button>
 </div>
-<div class="form-group">
-  <label>Group Members</label>
-  <input type="text" class="form-control" #groupNames>
-</div>
-<div class="form-group">
-  <label>Description</label>
-  <textarea type="text" class="form-control" #description></textarea>
-</div>
-<div class="form-group">
-  <label>Funding Goal</label>
-  <input type="number" class="form-control" #neededFunds>
-</div>
-<div class="form-group">
-  <label>Rewards</label>
-  <input type="text" class="form-control" #rewards>
-</div>
-<button class='btn btn-default' (click)="submit(projectName.value, groupNames.value, description.value, neededFunds.value, rewards.value); projectName.value=''; groupNames.value=''; description.value=''; neededFunds.value=''; rewards.value=''">Fund Me!</button>
+<app-project-list></app-project-list>
